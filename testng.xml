@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ConsoleClientApplication Suite">
+    <test name="Commands Test">
+        <classes>
+            <class name="edu.java.commands.CommandsTest"/>
+            <class name="edu.java.ftp.FTPAddressTest"/>
+            <class name="edu.java.utils.JSONHandlerTest"/>
+            <class name="edu.java.services.StudentServiceTest"/>
+            <class name="edu.java.ftp.FTPClientTest"/>
+            <class name="edu.java.entities.StudentTest"/>
+        </classes>
+    </test>
+</suite>
