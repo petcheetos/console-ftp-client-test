@@ -46,6 +46,23 @@ public class FTPClientTest {
     }
 
     @Test
+    public void testGetDataFromFileActiveMode() {
+        String testData = "Test data for FTP\n";
+        String data = ftpClient.getDataFromFile("test.txt", false);
+        assertEquals(data, testData);
+    }
+
+    @Test
+    public void testSaveDataToFileActiveMode() {
+        String testData = "Test data for FTP\n";
+
+        boolean result = ftpClient.saveDataToFile(testData, "test_upload.txt", false);
+        assertTrue(result);
+
+        String data = ftpClient.getDataFromFile("test_upload.txt", false);
+        assertEquals(data, testData);
+    }
+    @Test
     public void testDisconnect() {
         ftpClient.disconnect();
         assertTrue(true);
