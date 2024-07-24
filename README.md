@@ -79,3 +79,30 @@ StudentTest:
 - testToString: Проверяет, что метод toString возвращает правильное строковое представление объекта.
 
 ### Запуск тестов
+Для запуска тестов используется Maven.
+Также в проекте присутствует зависимость на проект с разработанным [FTP-клиентом](https://github.com/petcheetos/console-ftp-client), поэтому убедитесь, что основной проект FTP-клиента собран и установлен в локальном Maven-репозитории:
+```bash
+git clone https://github.com/petcheetos/console-ftp-client.git
+cd console-ftp-client
+mvn clean install
+```
+Клонируйте репозиторий с тестами:
+```bash
+git clone https://github.com/petcheetos/console-ftp-client-tests.git
+cd console-ftp-client-tests
+```
+
+Создайте исполняемый JAR файл:
+```bash
+mvn clean package
+```
+
+Запуск с использованием JAR файла:
+```bash
+java -jar target/ftp-client-test-1.0-SNAPSHOT-jar-with-dependencies.jar testng.xml
+```
+Запуск с использованием Maven:
+```bash
+mvn test
+```
+
